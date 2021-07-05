@@ -1,3 +1,6 @@
+
+
+//Find the index number of given character
 function findAll (str,char){
     if(str.includes(char)){
         for(let i = 0; i<str.length; i++){
