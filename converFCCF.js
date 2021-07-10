@@ -10,10 +10,10 @@ function askFromUserAboutTemp(){
 
 function askFromUserAboutConversionType(){
     while (true){
-        let convert = prompt("1. F to C \n2. C to F\n3.exit ")
-        if(convert==1 || convert==2 || convert == 3){
+        let option = prompt("1. F to C \n2. C to F\n3.exit ")
+        if(option==1 || option==2 || option == 3){
 
-            return convert;
+            return option;
         }
 
     }
@@ -31,14 +31,14 @@ function convertCelcius(num){
 }
 
 
-function convertTempAndLog(convert,temp){
-    if (convert == 1){
+function convertTempAndLog(option,temp){
+    if (option == 1){
         console.log(convertCelcius(temp) + " C");
     
-    }else if(convert==2){
+    }else if(option==2){
         console.log(convertFahrenheit(temp)+ " F");
     
-    }else if (convert == 3){
+    }else if (option == 3){
         console.log("No problem,see you later");
     }else{
         console.log("Please enter proper value");
@@ -51,8 +51,8 @@ function convertTempAndLog(convert,temp){
 
 
 let temp = askFromUserAboutTemp();
-let convert = askFromUserAboutConversionType();
-convertTempAndLog(convert,temp);
+let option = askFromUserAboutConversionType();
+convertTempAndLog(option,temp);
 
 
 
