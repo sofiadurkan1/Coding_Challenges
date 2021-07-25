@@ -4,10 +4,21 @@
 
 
 
-const greet = personName =>{
-    return `Hey ${personName}!`
+// const greet = personName =>{
+//     return `Hey ${personName}!`
 
-}
+// }
+
+
+// console.log(greet("Mina"));
+// console.log(greet("Beren"));
+
+//implicit returns
+
+
+const greet = personName => `Hey ${personName}!`
+
+
 
 console.log(greet("Mina"));
 console.log(greet("Beren"));
