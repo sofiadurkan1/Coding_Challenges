@@ -22,8 +22,16 @@ console.log(findEvenValues(9));
 //second solution
 
 
-function findEvenValues(num){
+function findEvenValuesTwo(num){
     let myArray = [];
 
-    
+    for(let i = 0; i < num; i++) {
+        if(i % 2 === 0){
+            myArray.push(i);
+        }
+    }
+return myArray.length;
+
 }
+
+console.log(findEvenValuesTwo(9));
