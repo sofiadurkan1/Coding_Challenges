@@ -3,11 +3,10 @@
 
 function arrayOfMultiples(num, length) {
     let result = [];
-    let multi = 0;
 
-    for (let i = 0; i < num.length; i++) {
-         multi = num *i
-       result.push(multi)
+    for (let i = 1; i <= length; i++) {
+     
+       result.push(num *i)
         
     }
     return result;
@@ -25,10 +24,10 @@ console.log(arrayOfMultiples(17, 6) )
 
 
 const array = [];
-function arrayOfMultiples(a,b) {
-    while (b > 0) {
-        array.push(a * (array.length+1))
-        b--;
+function arrayOfMultiples(num,length) {
+    while (length > 0) {
+        array.push(num * (array.length+1))
+        length --;
     }
     return array
 }
