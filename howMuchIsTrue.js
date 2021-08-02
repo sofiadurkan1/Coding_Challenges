@@ -13,6 +13,12 @@ function countTrue(arr) {
 
 
   //Solution 2:
+
+
+function countTrue(arr){
+    return arr.filter(word => word === true).length;
+}
+
   
   
 	
@@ -21,3 +27,16 @@ function countTrue(arr) {
        console.log(countTrue([false, false, false, false]) )
        
        console.log(countTrue([]) )
+
+
+
+// Foreach function 
+
+const booleanList = [];
+const countTrue = [true, false, false, true, false]
+// countTrue([false, false, false, false]) ➞ 0
+array.forEach(element => {
+    if (element == true) {
+    return booleanList.push(element)
+}});
+console.log(booleanList);
