@@ -27,7 +27,28 @@
 //     console.log(`A scalene triangle`)
 // }
 
-function checkTriangle(a,b,c){
+class Triangle {
+    constructor(a,b,c) {
+      this.a = a;
+      this.b = b;
+      this.c = c;
+    }
+    checkTriangle(){
+
+    }    
+}
+
+let triangle1 = new Triangle(4,7,9)
+let triangle2 = new Triangle(5,5,5)
+let triangle3 = new Triangle(4,4,8)
+let triangle4 = new Triangle(0,7,9)
+
+
+
+function checkTriangle(triangle){
+    let a = triangle.a;
+    let b =triangle.b;
+    let c =triangle.c;
     if(a<1 || b<1 || c<1){
         return "it is not a triangle"
     } else if(a+b==c || b+c==a || a+c==b){
@@ -41,12 +62,11 @@ function checkTriangle(a,b,c){
         return `A scalene triangle`
     }
 
-
 }
-console.log(checkTriangle(4,7,9))
-console.log(checkTriangle(5,5,5))
-console.log(checkTriangle(4,4,9))
-console.log(checkTriangle(4,4,8))
-console.log(checkTriangle(0,7,9))
+
+console.log(checkTriangle(triangle1))
+console.log(checkTriangle(triangle2))
+console.log(checkTriangle(triangle3))
+console.log(checkTriangle(triangle4))
 
 
