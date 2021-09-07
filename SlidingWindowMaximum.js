@@ -27,4 +27,21 @@ function maxNumberArr(arr) {
   return result;
 }
 console.log(maxNumberArr([10, 5, 2, 7, 8, 7]));
-console.log(maxNumberArr([1,3,-1,-3,5,3,6,7]))
+console.log(maxNumberArr([1, 3, -1, -3, 5, 3, 6, 7]));
+
+//Second Method // nested loop
+
+let result = [];
+const givenArr = [10, 5, 2, 7, 8, 7];
+const k = 3;
+
+for (i = 0; i < givenArr.length - (k - 1); i++) {
+  max = givenArr[i];
+  for (j = i; j < i + k; j++) {
+    if (givenArr[j] > max) {
+      max = givenArr[j];
+    }
+  }
+  result.push(max);
+}
+console.log(result);
