@@ -20,6 +20,8 @@ else{
 
 }
 
+
+
 console.log(isPerfectNumber(9));
 console.log(isPerfectNumber(213));
 console.log(isPerfectNumber(6));
