@@ -27,3 +27,4 @@ function maxNumberArr(arr) {
   return result;
 }
 console.log(maxNumberArr([10, 5, 2, 7, 8, 7]));
+console.log(maxNumberArr([1,3,-1,-3,5,3,6,7]))
