@@ -20,16 +20,39 @@
 // Write a function that takes series of brackets and returns true or false depending on the rules
 // above
 
-
 function isValid(code) {
-    let brackStr = []
+  let openerStorage = [];
+  let openers = ["(", "{", "["];
+  let closers = [")", "}", "]"];
 
+  const matchBrackets = new Map();
 
-   }
-   /* *** Tests *** */
-   let desc = "valid short code";
+  matchBrackets.set("(", ")");
+  matchBrackets.set("{", "}");
+  matchBrackets.set("[", "]");
 
+  for (let i = 0; i < code.length; i++) {
+    if (openers.includes(code[i])) {
+      openerStorage.push(code[i]);
+    } else if (closers.includes(code[i])) {
+      let lastOpener = openerStorage.pop();
+      let expectedCloser = matchBrackets.get(lastOpener);
+      if (expectedCloser !== code[i]) {
+        return false;
+      }
+    }
+  }
 
+  if (openerStorage.length !== 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+/* *** Tests *** */
+
+let desc = "valid short code";
 assertEqual(isValid("()"), true, desc);
 desc = "valid longer code";
 assertEqual(isValid("([]{[]})[]{{}()}"), true, desc);
@@ -42,11 +65,10 @@ assertEqual(isValid("[[]]())"), false, desc);
 desc = "empty string";
 assertEqual(isValid(""), true, desc);
 
-
 function assertEqual(a, b, desc) {
- if (a === b) {
- console.log(`${desc} ... PASS`);
- } else {
- console.log(`${desc} ... FAIL: ${a} != ${b}`);
- }
+  if (a === b) {
+    console.log(`${desc} ... PASS`);
+  } else {
+    console.log(`${desc} ... FAIL: ${a} != ${b}`);
+  }
 }
